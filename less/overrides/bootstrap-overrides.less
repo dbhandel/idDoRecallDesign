@@ -1,0 +1,379 @@
+/* 
+ * 
+ * This is the HTML5 Admin override file for Bootstrap LESS 
+ * 
+ */
+
+/* import HTML5 Variables (for colors, etc.) */
+@import "../variables.less";
+@import "../vendor/lesshat/lesshat.less";
+
+/* full width to this container! :) */
+@media (min-width: 768px){
+    .container {
+        max-width:100%;
+    }
+}
+
+.navbar-fixed-top{
+    background: white;
+    border-bottom: 1px solid @gray_shadow;
+}
+
+/* small changes to the navbar */
+.navbar-brand {
+    & img{
+        height: 40px;
+        width: auto;
+    }
+    padding: 3px 15px 0 15px;
+    color: black;
+    & .text{
+        color: black;
+        display: inline-block;
+        height: 28px;
+        padding-top: 22px;
+        font-size: 20px;
+    }
+}
+.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus, .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus{
+    color:black;
+    background: white;
+}
+.navbar-nav > li:hover{
+    color:black;
+    background: white;
+}
+.navbar-nav > li{
+    border-right:1px solid white;
+    border-left:1px solid @gray_shadow;
+}
+.navbar-nav > li:last-child {
+    border-right:1px solid @gray_shadow;
+}
+.navbar-right > li:nth-child(3){
+    border-right:1px solid @gray_shadow;
+}
+.navbar-toggle{
+    & .icon-bar{
+        background-color: darken(@gray_light,30);
+    }
+    background-color: @gray_light;
+    .border-radius(2);
+    border: 1px solid darken(@gray_light,10);
+    border-bottom: 4px solid darken(@gray_light,10);
+    border-right: 4px solid darken(@gray_light,10);
+    &:hover{
+        & .icon-bar{
+            background-color: black;
+        }
+        background-color: darken(@gray_light,10);
+        border: 1px solid darken(@gray_light,30);
+        border-bottom: 4px solid darken(@gray_light,30);
+        border-right: 4px solid darken(@gray_light,30);
+    }
+}
+
+
+
+/* adjust btn */
+.btn-primary{
+    background-color: @h5a_blue;
+    &.disabled,
+    &[disabled]{
+        background-color: @h5a_blue;
+        border-color: darken(@h5a_blue,10);
+        .opacity(.5);
+    }
+    &:hover, :focus, :active {
+        color: #ffffff;
+        background-color: darken(@h5a_blue,20);
+        border-color: darken(@h5a_blue,30);
+    }
+    border-color: darken(@h5a_blue,10);
+}
+.open .dropdown-toggle.btn-primary, .btn-primary.active { 
+    color: #ffffff;
+    background-color: darken(@h5a_blue,20);
+    border-color: darken(@h5a_blue,30);
+}
+.btn-default{
+    background-color: #eee;
+    color: @gray_text;
+    &.disabled,
+    &[disabled]{
+        background-color: white;
+        border-color: @gray_light;
+        .opacity(.5);
+    }
+    &:hover, :focus{ 
+        color: #ffffff;
+        background-color: darken(@gray_light,20);
+        border-color: darken(@gray_light,30);
+    }
+    &.active { 
+        color: black;
+        background-color: white;
+        border-color: darken(@gray_light,30);
+    }
+}
+.caret{
+    border-bottom: none;
+}
+
+
+
+
+
+/* headings */
+h1, h1 small{
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 100;
+    letter-spacing: 0.04em;
+    text-transform:uppercase;
+    & small{
+        text-transform:none;
+        letter-spacing: 0.02em;
+    }
+    & img{
+        margin-right: 5px;
+        margin-left: 5px;
+        border: 1px solid @gray_text;
+    }
+}
+h2, h2 small{
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+h3, h4, h5{
+    margin-bottom: 10px;
+    font-weight: 200;
+    letter-spacing: 0.05em;
+    & a{
+        color:@gray_dark_text;
+        font-weight: 400;
+    }
+}
+h3{
+    margin-bottom: 20px;
+}
+
+
+/* links */
+a, li a {
+    color: darken(@h5a_blue,10);
+}
+a:hover, li a:hover{
+    color: darken(@h5a_blue,20);
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{
+    background: darken(@h5a_blue,20);
+}
+.dropdown-menu > li > a:hover {
+    background: @h5a_blue;
+}
+
+
+/* text */
+p {
+    font-weight: 300;
+}
+
+
+/* TABS */
+.tab-content > .tab-pane, .pill-content > .pill-pane {
+    background: white;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.nav-tabs > li{
+    margin-bottom: -3px;
+}
+.nav-tabs .open > a, .nav-tabs .open > a:hover, .nav-tabs .open > a:focus, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+    border: 0;
+    border-top:3px solid darken(@h5a_blue,20);
+    color: darken(@h5a_blue,20);
+    background:white;
+   border-left: 1px solid #ddd;
+   border-right: 1px solid #ddd;
+}
+.nav-tabs > li > a {
+   .border-radius(2);
+    border: 0;
+    border-top: 3px solid transparent;
+   border-left: 1px solid transparent;
+   border-right: 1px solid transparent;
+}
+.nav-tabs > li > a:hover {
+   color: darken(@h5a_blue,10);
+   background: white;
+   border: 0;
+   border-top:3px solid @h5a_blue;
+   border-left: 1px solid #ddd;
+   border-right: 1px solid #ddd;
+}
+
+
+/* FORMS */
+
+.input-icon > [class*="icon-"] {
+    padding: 0px 3px;
+    z-index: 2;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 3px;
+    line-height: 28px;
+    display: inline-block;
+    color: rgb(144, 144, 144);
+    font-size: 16px;
+}
+.form-control.input-xs{
+    padding: 1px 5px;
+    font-size: 10px;
+    height: 22px;
+}
+
+form label{
+    font-weight: 200;
+    color: @gray_text;
+    padding:0!important;
+    line-height: 16px;
+    padding-right:0;
+    &.col-sm-1, &.col-sm-2, &.col-sm-3, &.col-sm-4, &.col-sm-6, &.col-sm-6, &.col-sm-7, &.col-sm-8, &.col-sm-9, &.col-sm-10, &.col-sm-11, &.col-sm-12{
+      line-height:25px;
+    }
+    &.error{
+        color: @h5a_red;
+        font-size:12px;
+    }
+    &.valid{
+        color: @h5a_green;
+        font-size:12px;
+    }
+    &.right{
+        text-align: right;
+    }
+}
+.form-group{
+    margin-bottom: 8px;
+}
+form{
+    margin-top:20px;
+    margin-bottom: 35px;
+}
+
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+
+    &:focus{
+        border-color: @h5a_blue;
+        outline: 0;
+        outline: thin dotted \9;
+        /* IE6-9 */
+
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @h5a_blue;
+        -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @h5a_blue;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @h5a_blue;
+    }
+
+    &.error{
+        border-color: @h5a_red;
+        outline: 0;
+        outline: thin dotted \9;
+        /* IE6-9 */
+        &:focus{
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @h5a_red;
+            -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @h5a_red;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @h5a_red;
+        }
+    }
+    &.valid{
+        border-color: @h5a_green;
+        outline: 0;
+        outline: thin dotted \9;
+        /* IE6-9 */
+        &:focus{
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @h5a_green;
+            -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @h5a_green;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @h5a_green;
+        }
+    }
+}
+
+/* thumbs */
+.thumbnail, .img-thumbnail{
+    border: 1px solid @gray_shadow;
+    .border-radius(3);
+}
+a.thumbnail:hover,
+a.thumbnail:focus {
+  border-color: darken(@h5a_blue,20);
+}
+
+
+.progress-bar-info.h5a {
+    background-color: @h5a_blue;
+}
+.progress-bar-danger.h5a {
+    background-color: @h5a_red;
+}
+.progress-bar-success.h5a {
+    background-color: @h5a_green;
+}
+.progress-bar-warning.h5a {
+    background-color: @h5a_orange;
+}
+.progress-bar-default.h5a {
+    background-color: @gray_shadow;
+}
+
+
+
+
+/* PANELS */
+.panel.h5a{
+    .border-radius(0);
+}
+.panel-title>a{
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+
+
+/* CAROUSEL */
+.carousel-caption{
+    text-shadow: 1px 2px 6px black;
+    color:white;
+    font-weight: 200;
+}
+
+
+/* MEDIA */
+.media, .media-body {
+    color: @gray_text;
+}
+.media-body{
+    font-weight: 300;
+}

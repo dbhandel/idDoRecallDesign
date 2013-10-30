@@ -1,0 +1,15 @@
+
+
+body, body {
+    height: 100%;
+}
+.container, .row, .col-md-3 {
+    height: 100%
+}
+
+#main-left-panel, #main-right-panel {
+    height: 600px;
+    background-color: palegoldenrod;
+    overflow: auto;
+    max-height: 600px;
+}

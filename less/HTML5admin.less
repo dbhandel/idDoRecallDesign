@@ -1,0 +1,1598 @@
+/*
+ * HTML5 Admin main STYLES
+ *
+ *
+ * Hello downloader!
+ *
+ * If you are looking at this comment from the CSS file...it's ok to modify it...but:
+ * you could also leave this untouched and add your custom styles on a separate file (recommended)
+ * 
+ * 
+ * If you are looking at the CSS file...it's ok to modify it...but:
+ *
+ * just REMEMBER:
+ * 
+ * you can also use LESS files (recommended http://lesscss.org/)
+ * an simply set their export PATH to the correct one
+ * (you know which is the correct path by looking at the HTML5 Admin folder structure)
+ * 
+ */
+
+ @import "variables.less";
+
+
+/* bs example class as from BS docs */
+.bs-example {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    background-color: #fafafa;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+}
+
+.bs-glyphicons {
+  padding-left: 0;
+  padding-bottom: 1px;
+  margin-bottom: 20px;
+  list-style: none;
+  overflow: hidden;
+}
+/* end bs example class as from BS docs */
+
+
+/* ******************************************************************************** */
+/* ******************************************************************************** */
+
+/* ************************** MAIN HTML5 ADMIN STYLE CONFIG *********************** */
+
+/* ******************************************************************************** */
+/* ******************************************************************************** */
+
+body {
+  position: relative; /* For scrollyspy */
+  padding-top: 50px; /* Account for fixed navbar */
+}
+
+
+/* ********************************************************** */
+/* ************************************************** H5A containers */
+.h5a-container, .row.h5a{
+    border-top:1px solid @gray_shadow;
+    padding-top: 35px;
+    
+    &.blue{
+        background: lighten(@h5a_blue, 30);
+    }
+    &.violet{
+        background: lighten(@h5a_violet, 50);
+    }
+    &.orange{
+        background: lighten(@h5a_orange, 30);
+    }
+    &.green{
+        background: lighten(@h5a_green, 30);
+    }
+    &.red{
+        background: lighten(@h5a_red, 30);
+    }
+    &.gray{
+        background: lighten(@gray_text, 50);
+    }
+    
+}
+
+/* ********************************************************** */
+/* ************************************************** Paragraphs */
+p {
+    &.responsive{
+      /* Extra small devices (phones, up to 480px) */
+      /* No media query since this is the default in Bootstrap */
+      font-size:10px;
+      /* Small devices (tablets, 768px and up) */
+      @media (min-width: @screen-sm) { font-size:90%; }
+
+      /* Medium devices (desktops, 992px and up) */
+      @media (min-width: @screen-md) { font-size:95%; }
+
+      /* Large devices (large desktops, 1200px and up) */
+      @media (min-width: @screen-lg) { font-size:100%; }
+    }
+    color:@gray_text;
+    &.small {
+        color:@gray_text;
+        font-size:12px;   
+    }
+    &.red {
+        color:@h5a_red;
+    }   
+    &.orange {
+        color:@h5a_orange;
+    }
+    &.green {
+        color:@h5a_green;
+    }
+    &.gray {
+        color:@h5a_gray;
+    }
+    &.blue {
+        color:@h5a_blue;
+    }
+    &.black {
+        color:#444;
+    }
+}
+ul, li{
+    color:@gray_text;
+}
+ul.small{
+    color:@gray_text;
+    font-size:12px;
+    & li{
+        padding: 5px 0;
+    }
+}
+
+/* ********************************************************** */
+/* ************************************************** top nav and header */
+.h5a-docs-nav {
+  background-color: @violet_selected;
+  border-color: #463265;
+}
+.h5a-docs-nav .navbar-collapse {
+  border-color: #463265;
+}
+.h5a-docs-nav .navbar-brand {
+  color: white;
+}
+
+.h5a-docs-nav .navbar-nav > li > a {
+  color: #cdbfe3;
+}
+.h5a-docs-nav .navbar-nav > li > a:hover {
+  color: white;
+}
+.h5a-docs-nav .navbar-nav > .active > a,
+.h5a-docs-nav .navbar-nav > .active > a:hover {
+  color: white;
+  background-color: #463265;
+}
+.navbar-nav > li > a i.icon-bell.shake{
+    display: inline-block;
+    color:black;
+    -webkit-animation: swing .5s infinite;
+    -moz-animation: swing .5s infinite;
+    -ms-animation: swing .5s infinite;
+    animation: swing .5s infinite;
+}
+.navbar-nav > li > a i.icon-envelope-alt.shake{
+    display: inline-block;
+    color:black;
+    -webkit-animation: tada 1s infinite;
+    -moz-animation: tada 1s infinite;
+    -ms-animation: tada 1s infinite;
+    animation: tada 1s infinite;
+}
+
+.h5a-docs-nav .navbar-toggle {
+  border-color: @violet_selected;
+}
+.h5a-docs-nav .navbar-toggle:hover {
+  background-color: #463265;
+  border-color: #463265;
+}
+
+
+/* Homepage */
+.h5a-docs-home {
+  color: #cdbfe3;
+  background-color: @violet_selected;
+}
+
+
+/* By default it's not affixed in mobile views, so undo that */
+.h5a-sidebar.affix, .h5a-sidebar.affix-top  {
+    position: static;
+    @media screen and (min-width: 992px) {
+      height:2600px;
+    }
+}
+
+/* ********************************************************** */
+/* ************************************************** responsive H5A sidenav first level */
+.h5a-sidenav {
+  margin-top: 30px;
+  //margin-bottom: 30px;
+  margin-left: -15px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 white;
+  background-color: @gray_light;
+  .border-radius(0);
+  .box-shadow(~"1px 1px 1px #e7e7e7");
+  height:100%;
+}
+.h5a-sidenav > li i.icon-remove{
+  color: lighten(@gray_text,30);
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.sidenav-stuff{
+    border:2px solid white;
+    padding:10px;
+    border-bottom:1px solid white;
+    h4.underline, h3.underline, li h5.underline, h6.underline{
+      border-color: @gray_shadow;
+    }
+    & p{
+      padding:0;
+    }
+    h4, h3, h5, h6, h4.underline, h3.underline, h5.underline, h6.underline{
+      border-color: @gray_shadow;
+      padding:10px;
+      padding-bottom:5px;
+      &.red {
+          color:@h5a_red;
+      }   
+      &.orange {
+          color:@h5a_orange;
+      }
+      &.green {
+          color:@h5a_green;
+      }
+      &.gray {
+          color:@h5a_gray;
+      }
+      &.blue {
+          color:@h5a_blue;
+      }
+      &.black {
+          color:#444;
+      }
+    }
+}
+
+/* ********************************************************** */
+/* ************************************************** responsive H5A sidebar boxes/messages/forms */
+.sidenav-messages{
+    border:2px solid white;
+    &.dark {
+        background-color:darken(@gray_light, 5);
+        h4, h3, h5, h6, h4.underline, h3.underline, h5.underline, h6.underline{
+           border-color: darken(@gray_shadow,5);
+        }
+        & p{
+          color: @gray_text, 10;
+          padding:10px;
+          padding-bottom:5px;
+        }
+    }
+    & p{
+      padding:10px;
+      padding-bottom:5px;
+      font-size: 12px;
+      font-weight: 400;
+      color: lighten(@gray_text, 20);
+      &:hover{
+        color: @gray_text;
+      }
+      &.red {
+          color:@h5a_red;
+      }   
+      &.orange {
+          color:@h5a_orange;
+      }
+      &.green {
+          color:@h5a_green;
+      }
+      &.gray {
+          color:@h5a_gray;
+      }
+      &.blue {
+          color:@h5a_blue;
+      }
+      &.black {
+          color:#444;
+      }
+    }
+
+    h4, h3, h5, h6, h4.underline, h3.underline, h5.underline, h6.underline{
+      border-color: @gray_shadow;
+      padding:10px;
+      padding-bottom:5px;
+      &.red {
+          color:@h5a_red;
+      }   
+      &.orange {
+          color:@h5a_orange;
+      }
+      &.green {
+          color:@h5a_green;
+      }
+      &.gray {
+          color:@h5a_gray;
+      }
+      &.blue {
+          color:@h5a_blue;
+      }
+      &.black {
+          color:#444;
+      }
+    }
+}
+
+
+/* ********************************************************** */
+/* ************************************************** responsive H5A LEFT SIDE navigation */
+.h5a-sidebar .nav > li > a {
+  display: block;
+  color: black;
+  padding: 15px 5px 15px 10px;
+  border-bottom: 1px solid @gray_shadow;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 12px;
+  font-size: 14px; 
+}
+.h5a-sidebar .nav > li > a:hover,
+.h5a-sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: @gray_supersuperlight;
+  border-left: 2px solid black;
+}
+.h5a-sidebar .nav > .active > a,
+.h5a-sidebar .nav > .active:hover > a,
+.h5a-sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: white;
+  text-shadow:none;
+  background: @h5a_blue;//@gray_supersuperlight;
+  //border-left: 2px solid black;
+  font-weight:500;
+}
+.h5a-sidebar .nav .nav > li > a{
+  border-bottom: 1px solid @gray_shadow;
+}
+.h5a-sidebar .nav .nav > li > a, .h5a-sidebar .nav .nav .nav > li > a, .h5a-sidebar .nav .nav .nav .nav > li > a, .h5a-sidebar .nav .nav .nav .nav .nav > li > a{
+  font-size: 90%;
+  text-transform: none;
+  font-weight: 200;
+  height: 25px;
+  line-height: 12px;
+  border-bottom: 0;
+}
+.h5a-sidebar .nav .nav > .active > a,
+.h5a-sidebar .nav .nav > .active:hover > a,
+.h5a-sidebar .nav .nav > .active:focus > a,
+.h5a-sidebar .nav .nav .nav > .active > a,
+.h5a-sidebar .nav .nav .nav > .active:hover > a,
+.h5a-sidebar .nav .nav .nav > .active:focus > a,
+.h5a-sidebar .nav .nav .nav .nav > .active > a,
+.h5a-sidebar .nav .nav .nav .nav > .active:hover > a,
+.h5a-sidebar .nav .nav .nav .nav > .active:focus > a 
+{
+  background: @gray_supersuperlight;
+  border-left: 2px solid @h5a_blue;
+  color: darken(@h5a_blue,15);
+  font-weight: 400;
+}
+.h5a-sidebar .nav .nav > li > a{
+  padding: 7px 5px 7px 20px;
+  border-bottom: 1px dotted #e7e7e7;
+}
+.h5a-sidebar .nav .nav .nav > li > a{
+  padding: 7px 5px 7px 28px;
+  border-bottom: 1px dotted #e7e7e7;
+}
+.h5a-sidebar .nav .nav .nav .nav > li > a{
+  padding: 7px 5px 7px 36px;
+  border-bottom: 1px dotted #e7e7e7;
+}
+.h5a-sidebar .nav .nav .nav .nav .nav > li > a{
+  padding: 7px 5px 7px 44px;
+  border-bottom: 1px dotted #e7e7e7;
+}
+
+
+
+/* ********************************************************** */
+/* ************************************************** responsive H5A header and sidebar */
+@media screen and (min-width: 992px) {
+  .h5a-header h1,
+  .h5a-header p {
+    margin-right: 0;
+  }
+  .carbonad {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 15px !important;
+    width: 330px !important;
+    min-height: 132px;
+  }
+
+  /* Show the hidden subnavs when space allows it */
+  .h5a-sidebar .nav > .active > ul {
+    display: block;
+  }
+  /* Widen the fixed sidebar */
+  .h5a-sidebar.affix,
+  .h5a-sidebar.affix-bottom {
+    width:14.666667%;//width: 22.50%;
+  }
+
+  /* Widen the fixed sidebar */
+  .h5a-sidebar.affix.dashboard,
+  .h5a-sidebar.affix-bottom.dashboard {
+    width: 22.50%;
+  }
+
+  .h5a-sidebar.affix-top{
+    width:100%;
+  }
+
+  .h5a-sidebar.affix {
+    position: fixed; /* Undo the static from mobile-first approach */
+    top: 80px;
+  }
+  .h5a-sidebar.affix-bottom {
+    position: absolute; /* Undo the static from mobile-first approach */
+  }
+  .h5a-sidebar.affix-bottom .h5a-sidenav,
+  .h5a-sidebar.affix .h5a-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* Large desktops and up */
+@media screen and (min-width: 1200px) {
+
+  /* Widen the fixed sidebar again */
+  .h5a-sidebar.affix-bottom,
+  .h5a-sidebar.affix {
+    width:14.666667%;//width: 22.73%;
+  }
+
+}
+
+
+
+
+/* override BS3 dropdown open */
+.dropdown.open>a{
+    background: @gray_shadow!important;
+    &:hover{
+        background: @gray_shadow;
+    }  
+}
+
+/* ********************************************************** */
+/* ************************************************** H5A messages and notifications in top bar */
+#messages, #notifications{
+    width: 300px;
+    img {
+        float:left;
+        margin-right: 10px;
+    }
+    .image {
+        float:left;
+        height:48px;
+        width:48px;
+        font-size:50px;
+        margin-right: 10px;
+        color: @gray_shadow;
+    }
+    & li a{
+        padding-top:10px;
+        font-size:11px;
+        display: table-cell;
+        vertical-align: middle;
+        white-space: inherit;
+        width: 301px;
+        &:hover{
+            background: @gray_shadow;
+            & .image{
+              color: white;
+            }
+        }
+        & p{
+          height: 50px;
+          overflow: hidden;
+          text-align: left;
+          padding: 2px;
+        } 
+    }
+    & li p{
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* ********************************************************** */
+/* ************************************************** H5A BOX and C. */
+.box{
+    .border-radius(0);
+    padding:10px;
+    margin-bottom:30px;
+    overflow:visible;
+    background: @gray_superlight;
+    .box-shadow(~"1px 1px 1px #e7e7e7");
+    & .content-right{
+      margin-left: 100px;
+      position: relative;
+    }
+    & form{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &:hover{
+      background: darken(@gray_superlight, 2%);
+    }
+    &.hp_knob{
+        width:100px;
+        float: left;
+    }
+    & .title{
+        font-size:10px;
+        font-weight:500;
+        color: @h5a_orange;
+        a{
+            font-size:9px;
+            font-weight:300;
+        }
+        &.red {
+            color:@h5a_red;
+        }   
+        &.orange {
+            color:@h5a_orange;
+        }
+        &.green {
+            color:@h5a_green;
+        }
+        &.gray {
+            color:@h5a_gray;
+        }
+        &.blue {
+            color:@h5a_blue;
+        }
+        &.black {
+            color:#444;
+        }
+    }
+    & .value{
+        font-size:18px;
+        margin-top: -5px;
+        font-weight:500;
+        color: black;
+        a{
+            font-weight:300;
+            font-size:9px;
+        }
+        &.red {
+            color:@h5a_red;
+        }
+        &.orange {
+            color:@h5a_orange;
+        }
+        &.green {
+            color:@h5a_green;
+        }
+        &.gray {
+            color:@h5a_gray;
+        }
+        &.blue {
+            color:@h5a_blue;
+        }
+        &.black {
+            color:#444;
+        }
+    }
+    & .minichart{
+        float:left;
+        height: 70px;
+        width: 85px;
+        background:darken(@h5a_blue, 10);
+        .border-radius(3px);
+        padding:10px;
+        margin-right:10px;
+        &.red {
+            background:@h5a_red;
+        }
+        &.orange {
+            background:@h5a_orange;
+        }
+        &.green {
+            background:@h5a_green;
+        }
+        &.gray {
+            background:@h5a_gray;
+        }
+        &.blue {
+            background:@h5a_blue;
+        }
+        &.black {
+            background:gray;
+        }
+    }
+    & .icon{
+        float:left;
+        height: 70px;
+        width: 85px;
+        .border-radius(3px);
+        padding-left:22px;
+        margin-right:10px;
+        font-size:48px;
+        color:white;
+        background:darken(@h5a_blue, 10);
+        &.red {
+            background:@h5a_red;
+        }
+        &.orange {
+            background:@h5a_orange;
+        }
+        &.green {
+            background:@h5a_green;
+        }
+        &.gray {
+            background:@h5a_gray;
+        }
+        &.blue {
+            background:@h5a_blue;
+        }
+        &.black {
+            background:black;
+        }
+    }
+}
+
+
+/* ********************************************************** */
+/* ************************************************** H5A util: breadcrumbs! */
+span.breadcrumb, h1 span.breadcrumb{
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0;
+    background: none;
+    padding: 5px;
+    text-transform: uppercase;
+    position:absolute;
+    margin-top:-15px;
+
+    margin-top: -25px;
+    color: @h5a_blue;
+    background: @gray_light;
+    border-radius: 3px;
+    display: inline-block;
+    border-right: 1px solid #E9E9E9!important;
+
+
+    & a{
+        &:hover{
+            color:black;
+            text-decoration:none;
+        }
+        color:lighten(@gray_text,30);
+    }
+}
+
+/* ********************************************************** */
+/* ************************************************** H5A util: underlined Headings */
+h4.underline, h5.underline{
+    margin-top:0;
+    border-bottom: 1px solid black;
+    & small{
+        font-size:10px;
+        & a{
+            color:darken(@h5a_blue, 10);
+        }
+        & a:hover{
+            text-decoration:none;
+            color:darken(@h5a_blue, 20);
+        }
+    }
+    & span.boxes_right{
+        color:@gray_medium;
+        font-size:12px;
+    }
+}
+
+
+/* ********************************************************** */
+/* ************************************************** H5A util: title divider */
+.titleDivider{
+    border-top: 1px solid @gray_medium;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    color:@gray_medium;
+    & span{
+        display: block;
+        text-align: center;
+        height: 20px;
+        width: 200px;
+        background: white;
+        margin: -10px auto;
+        font-family: times;
+        font-style: italic;
+        font-weight: 100;
+    }
+}
+
+
+/* ********************************************************** */
+/* ************************************************** H5A util: images stuff/utils */
+img.center{
+    display:inline; margin: 0 auto; display:block;
+}
+
+
+/* ********************************************************** */
+/* ************************************************** H5A util: badge colors */
+.badge.red {
+    background-color:@h5a_red;
+}   
+.badge.orange {
+    background-color:@h5a_orange;
+}
+.badge.green {
+    background-color:@h5a_green;
+}
+.badge.gray {
+    background-color:@h5a_gray;
+}
+.badge.blue {
+    background-color:@h5a_blue;
+}
+.badge.black {
+    background-color:black;
+}
+
+/* ********************************************************** */
+/* ************************************************** H5A tip div */
+.tip{
+    background: @gray_light;
+    border-left:4px solid @gray_text;
+    padding:20px 20px 10px 20px;
+    font-style: italic;
+    color: @gray_text;
+    &.white{
+      background: white;
+    }
+    &.no-italic{
+      font-style: none;
+    }
+    &.red {
+        border-left:4px solid @h5a_red;
+        color:@h5a_red;
+    }   
+    &.orange {
+        border-left:4px solid @h5a_orange;
+        color:@h5a_orange;
+    }
+    &.green {
+        border-left:4px solid @h5a_green;
+        color:@h5a_green;
+    }
+    &.gray {
+        border-left:4px solid @h5a_gray;
+        color:@h5a_gray;
+    }
+    &.blue {
+        border-left:4px solid @h5a_blue;
+        color:@h5a_blue;
+    }
+    &.black {
+        color:#444;
+    }
+}
+
+/* ********************************************************** */
+/* ************************************************** H5A scoreboard (used in dashboard Demo ) */
+.scoreboard{
+  border-right: 1px solid @gray_shadow;
+  &.last{
+    border-right: 1px solid transparent;
+  }
+  & h4{
+    text-align: center;
+    font-size:12px;
+    font-weight: 400;
+    margin-bottom:0;
+    color: lighten(@gray_text, 10%);
+      &.blue{
+        color:@h5a_blue;
+      }
+      &.red{
+        color:@h5a_red;
+      }
+      &.green{
+        color:@h5a_green;
+      }
+      &.orange{
+        color:@h5a_orange;
+      }
+  }
+  & .score{
+    text-align: center;
+    font-size:20px;
+    font-weight:600;
+    color:@gray_text;
+      &.blue{
+        color:@h5a_blue;
+      }
+      &.red{
+        color:@h5a_red;
+      }
+      &.green{
+        color:@h5a_green;
+      }
+      &.orange{
+        color:@h5a_orange;
+      }
+  }
+}
+
+
+
+/* ********************************************************** */
+/* ************************************************** H5A FORMS STUFF */
+.input-group-addon.fancy{
+    background:white;
+    i{
+      color:@gray_text;
+    }
+}
+.form-control.fancy{
+    border-left:none;
+}
+.navbar-form{
+    width: 320px;
+    .input-group{
+      width: 100%;
+    }
+}
+
+
+/* ********************************************************** */
+/* ************************************************** BUTTONS */
+.h5a-form-group{
+  margin-left:-15px;
+}
+.btn-group-lg>.btn.h5a-btn{
+    .border-radius(0);
+}
+.btn-group-sm>.btn.h5a-btn{
+    .border-radius(0);
+}
+.btn-group-xs>.btn.h5a-btn{
+    .border-radius(0);
+}
+.h5a-btn {
+    &.full{
+        width:100%;
+    }
+    .border-radius(0);
+    /*border-bottom:3px solid;
+    border-right:3px solid;*/
+    line-height:20px;
+    font-weight:400;
+    &.btn-default {
+        color: @gray_text;
+        background-color: @gray_light;
+        border-color: darken(@gray_light,10);
+        &:hover, :focus { 
+            color: #ffffff;
+            background-color: darken(@gray_light,10);
+            border-color: darken(@gray_light,20);
+            color: @gray_text;
+        }
+        &.active{
+            color: black;
+            background-color: white;
+            border-color: darken(@gray_light,10);
+        }
+    }
+    &.btn-success { 
+        color: #ffffff;
+        background-color: @h5a_green;
+        border-color: darken(@h5a_green,10);
+        &:hover, :focus { 
+            color: #ffffff;
+            background-color: darken(@h5a_green,10);
+            border-color: darken(@h5a_green,20);
+        }
+        &.active{
+            color: black;
+        }
+    }
+    &.btn-primary { 
+        color: #ffffff;
+        background-color: @h5a_blue;
+        border-color: darken(@h5a_blue,10);
+        &.disabled,
+        &[disabled]{
+            background-color: @h5a_blue;
+            border-color: darken(@h5a_blue,10);
+            .opacity(.5);
+        }
+        &:hover, :focus { 
+            color: #ffffff;
+            background-color: darken(@h5a_blue,20);
+            border-color: darken(@h5a_blue,30);
+        }
+        &.active{
+            color: black;
+        }
+    }
+    &.btn-danger { 
+        color: #ffffff;
+        background-color: @h5a_red;
+        border-color: darken(@h5a_red,10);
+        &:hover, :focus { 
+            color: #ffffff;
+            background-color: darken(@h5a_red,10);
+            border-color: darken(@h5a_red,20);
+        }
+        &.active{
+            color: black;
+        }
+    }
+    &.btn-warning { 
+        color: #ffffff;
+        background-color: @h5a_orange;
+        border-color: darken(@h5a_orange,10);
+        &:hover, :focus { 
+            color: #ffffff;
+            background-color: darken(@h5a_orange,10);
+            border-color: darken(@h5a_orange,20);
+        }
+        &.active{
+            color: black;
+        }
+    }
+}
+.h5a-btn-xs{
+    border-bottom:2px solid;
+    border-right:1px solid;
+}
+/* ********************************************************** */
+/* ************************************************** end BUTTONS */
+
+
+/* ********************************************************** */
+/* ************************************************** INPUTS */
+input[type="date"]{
+  border: 1px solid #ccc;
+  padding: 4px;
+  .border-radius(0);
+}
+.h5a-input {
+  .border-radius(0);
+}
+.h5a-input-group-addon{
+    .border-radius(0);
+}
+.tm-tag{
+    background: @gray_shadow;
+    margin:2px;
+    color:@gray_text;
+    border: 1px solid white;
+    border-left: 0;
+    .border-radius(20px);
+    padding: 3px 12px;
+    padding-right:1px;
+    font-size: 12px;
+    float:left;
+    & a{
+      margin-left:4px;
+      font-family: monaco;
+      background: @gray_superlight;
+      .border-radius(10px);
+      padding: 2px 6px;
+      border-right: 1px solid #efefef;
+      border-left: 1px solid #efefef;
+      &:hover{
+        background: @h5a_blue;
+        color: white;
+        text-decoration: none;
+      };
+    }
+}
+/* ********************************************************** */
+/* ************************************************** end INPUTS */
+
+
+
+/* ********************************************************** */
+/* ************************************************** CSS switch (on/off) */
+
+/*
+ * Copyright (c) 2012-2013 Thibaut Courouble
+ * http://www.cssflow.com
+ *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+.switch {
+  position: relative;
+  margin:5px 0;
+  height: 26px;
+  width: 100%;
+  background: @gray_light;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  &.center{
+    margin: 0px auto;
+  }
+}
+
+.switch-label {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 50%;
+  line-height: 26px;
+  font-size: 12px;
+  color: @gray_text;
+  text-align: center;
+  cursor: pointer;
+}
+.switch-label:active {
+  font-weight: bold;
+}
+
+.switch-label-off {
+  padding-left: 2px;
+}
+
+.switch-label-on {
+  padding-right: 2px;
+}
+
+/* SWITCHES on/off */
+.switch-input {
+  display: none;
+}
+.switch-input:checked + .switch-label {
+  font-weight: bold;
+  color: white;
+  -webkit-transition: 0.15s ease-out;
+  -moz-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+}
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+  left: 50%;
+  /* Note: left: 50% doesn't transition in WebKit */
+}
+
+.switch-selection {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: 2px;
+  width: 50%;
+  height: 22px;
+  background: #65bd63;
+
+  -webkit-transition: left 0.15s ease-out;
+  -moz-transition: left 0.15s ease-out;
+  -o-transition: left 0.15s ease-out;
+  transition: left 0.15s ease-out;
+}
+.switch-green .switch-selection {
+  background: @h5a_green;
+}
+.switch-red .switch-selection {
+  background: @h5a_red;
+}
+.switch-black .switch-selection {
+  background: black;
+}
+.switch-gray .switch-selection {
+  background: @h5a_gray;
+  color:white;
+}
+.switch-blue .switch-selection {
+  background: @h5a_blue
+}
+
+
+
+/* ********************************************************** */
+/* ************************************************** color Picker */
+
+/* SIMPLE COLOR PICKER */
+/*
+ * Very simple jQuery Color Picker
+ * https://github.com/tkrotoff/jquery-simplecolorpicker
+ *
+ * Copyright (C) 2012-2013 Tanguy Krotoff <tkrotoff@gmail.com>
+ *
+ * Licensed under the MIT license
+ */
+
+/**
+ * Inspired by Bootstrap Twitter.
+ * See https://github.com/twitter/bootstrap/blob/master/less/dropdowns.less
+ * See http://twitter.github.com/bootstrap/assets/css/bootstrap.css
+ */
+
+.simplecolorpicker.picker:before {
+  position: absolute;
+  top: -7px;
+  left: 9px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.simplecolorpicker.picker:after {
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  content: '';
+}
+
+.simplecolorpicker.picker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1051; /* Above Bootstrap modal (z-index of 1050) */
+  display: none;
+  float: left;
+
+  min-width: 160px;
+  max-width: 275px;
+
+  padding: 4px 0 0 4px;
+  margin: 1px 0 0;
+  list-style: none;
+  background-color: #ffffff;
+
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+  .simplecolorpicker.inline {
+    display: inline-block;
+    height: 18px;
+    padding: 4px 0;
+  }
+
+  .simplecolorpicker.icon,
+  .simplecolorpicker span {
+    cursor: pointer;
+    display: inline-block;
+
+    border: 1px solid transparent;
+  }
+  .simplecolorpicker span {
+    margin: 0 4px 4px 0;
+  }
+
+  .simplecolorpicker span:hover,
+  .simplecolorpicker span.selected {
+    border: 1px solid black;
+  }
+
+
+
+/* ********************************************************** */
+/* ************************************************** Calendar STYLES */
+#external-events {
+    padding: 0 10px;
+}
+    
+#external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+}
+
+.external-event { /* try to mimick the look of a real event */
+    margin: 10px 0;
+    padding: 2px 4px;
+    background: #6bb5c1;
+    color: #fff;
+    font-size: .85em;
+    cursor: pointer;
+    .border-radius(3px);
+    &.red{
+      background: red;
+    }
+}
+a.fc-event{
+    &:hover{
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+.fc-event{
+    margin: 10px 0;
+    padding: 2px 4px;
+    background: #6bb5c1;
+    color: #fff;
+    font-size: .85em;
+    cursor: pointer;
+    .border-radius(3px);
+    border:0!important;
+}
+.fc-event, .external-event{
+    height: 20px;
+    overflow: hidden;
+    &:hover{
+      cursor: move;
+    }
+    &.blue{
+        background: @h5a_blue;
+    }
+    &.violet{
+        background: @h5a_violet;
+    }
+    &.orange{
+        background: @h5a_orange;
+    }
+    &.green{
+        background: @h5a_green;
+    }
+    &.red{
+        background: @h5a_red;
+    }
+    &.gray{
+        background: @gray_text;
+    }
+}
+#external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #666;
+}
+
+#external-events p input {
+    margin: 0;
+    vertical-align: middle;
+}
+
+#calendar {
+  float: right;
+  width: 100%;  
+}
+
+
+
+/* ********************************************************** */
+/* ************************************************** Categories/Stackers STYLES */
+#categories {
+    float: left;
+    width: 100%;
+
+    & .category {
+        -webkit-padding-start: 0px;
+        list-style-type:none;
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid @gray_medium;
+        background: lighten(@gray_medium, 20);
+    }
+    & .activity {
+        -webkit-padding-start: 0px;
+        list-style-type:none;
+        cursor:move;
+        padding: 5px;
+        margin: 5px;
+        background-color: White;
+        border: 1px solid @gray_medium;
+        background: lighten(@gray_medium, 15);
+    }
+
+    & .gate {
+        float: left;
+        list-style-type: none;
+        width: 255px;
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid @gray_shadow;
+        background: lighten(@gray_medium, 25);
+    }
+
+    & .handle{
+        padding: 2px 5px 2px 5px;
+        margin: 0px;
+        &:hover {
+            cursor: move;
+        }
+        &.categoryMid {
+          font-weight: 100;
+          font-size: 20px;
+        }
+        &.categoryMain {
+            font-weight: 100; 
+            font-size: 28px;
+        }
+    }
+
+
+}
+
+
+/* ********************************************************** */
+/* ************************************************** jQuery UI overrides for stacking */
+.ui-widget-content {
+    padding: 5px;
+}
+.ui-state-highlight {
+    height: 30px;
+    line-height: 50px;
+    border: 1px dashed @gray_text!important;
+    background: @gray_shadow!important;
+}
+.ui-state-highlight.category {
+    height: 100px;
+    line-height: 100px;
+    border: 1px dashed @gray_text!important;
+    background: @gray_shadow!important;
+}
+
+.thumbnail-placeholder{
+    height: 50px;
+    width: 50px;
+    background: red;
+}
+
+
+/* ********************************************************** */
+/* ************************************** no-print (class to avoid things to get printed) */
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
+
+
+/* ********************************************************** */
+/* **************************************************  H5A SIMPLE TABLES */
+table{
+    & td, th{
+        padding:10px;
+        &.red {
+            color:@h5a_red;
+        }   
+        &.orange {
+            color:@h5a_orange;
+        }
+        &.green {
+            color:@h5a_green;
+        }
+        &.gray {
+            color:@h5a_gray;
+        }
+        &.blue {
+            color:@h5a_blue;
+        }
+        &.black {
+            color:#444;
+        }
+    }
+}
+
+
+/* ********************************************************** */
+/* ************************************************** H5A invoice table */
+table.invoice{
+    width: 100%;
+    &.pricelist{
+        & tr{
+            &.price, &.total{
+              font-family: "Courier New", Courier, monospace;
+              border-top: 1px solid @gray_shadow;
+            }
+            &.price td:last-child, &.total td:last-child{
+                font-family: "Courier New", Courier, monospace;
+                text-align: right;
+            }
+        }
+        & tr.price:nth-child(even), tr.total:nth-child(even) {
+            background-color: @gray_shadow;
+        }
+    }
+}
+/* ************************************************** H5A simple table items */
+table.item{
+    width: 100%;
+    & td{
+        padding: 5px;
+    }
+    & td:nth-child(odd){
+      font-weight: 500;
+    }
+    & tr:nth-child(even){
+        background-color: lighten(@gray_shadow, 10);
+    }
+}
+
+
+/* ************************************************** H5A carousel custom (for Demo) */
+#carousel-example-generic{
+  border: 1px solid @gray_shadow;
+  padding:10px;
+}
+
+
+/* ********************************************************** */
+/* ************************************************** H5A Multi selection! */
+.ms-container{
+  width: 100%;
+}
+
+.ms-container:after{
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  clear: both;
+  min-height: 0;
+  visibility: hidden;
+}
+
+.ms-container .ms-selectable, .ms-container .ms-selection{
+  background: #fff;
+  color: #555555;
+  float: left;
+  width: 45%;
+}
+.ms-container .ms-selection{
+  float: right;
+}
+
+.ms-container .ms-list{
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  border: 1px solid #ccc;
+  position: relative;
+  height: 100px;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.ms-container .ms-list.ms-focus{
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0;
+  outline: thin dotted \9;
+}
+
+.ms-container ul{
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.ms-container .ms-optgroup-container{
+  width: 100%;
+}
+
+.ms-container .ms-optgroup-label{
+  margin: 0;
+  padding: 5px 0px 0px 5px;
+  cursor: pointer;
+  color: #999;
+}
+
+.ms-container .ms-selectable li.ms-elem-selectable,
+.ms-container .ms-selection li.ms-elem-selection{
+  border-bottom: 1px #eee solid;
+  padding: 2px 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+.ms-container .ms-selectable li.ms-hover,
+.ms-container .ms-selection li.ms-hover{
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  background-color: @h5a_blue;
+}
+
+.ms-container .ms-selectable li.disabled,
+.ms-container .ms-selection li.disabled{
+  background-color: #eee;
+  color: #aaa;
+  cursor: text;
+}
+/* ********************************************************** */
+/* ************************************************** END H5A multiselection */
+
+
+
+
+/* ********************************************************** */
+/* ************************************************** H5A SEARCH RESULTS */
+.search-result.affix{
+    background: @gray_light;
+    padding-bottom: 20px;
+    /* mobile */
+    display: block;
+    position: static;
+    overflow: hidden;
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm) { 
+        display: block;
+        position: static;
+    }
+
+    /* Large devices (large desktops, 1200px and up) AND Medium devices (desktops, 992px and up)*/
+    @media (min-width: @screen-lg){
+        position: fixed;
+        right:20px;
+        text-align:right;      
+        width:200px;
+        border-right: 2px solid @h5a_blue;
+    }
+    @media (min-width: @screen-md) {
+        position: fixed;
+        right:20px;
+        text-align:right;
+        width:200px;
+        border-right: 2px solid @h5a_blue;
+    }
+    & h4{
+        color:@h5a_blue;
+        strong{
+            color: @gray_text;
+        }
+    }
+    & h6{
+        color:@h5a_blue;
+        font-size:10px;
+        font-weight: 200;
+        letter-spacing: .1em;
+    }
+
+    .blue{
+        color: @h5a_blue;
+    }
+}
+/* ********************************************************** */
+/* ************************************************** H5A end SEARCH RESULTS */
+
+
+//include wizard and some variables stuff (leaving this at bottom so comments dont get mixed)
+@import "vendor/lesshat/lesshat.less";
+@import "vendor/wizard.less";
+@import "vendor/summernote.less";
+@import "vendor/bootstrap/less/variables.less";
